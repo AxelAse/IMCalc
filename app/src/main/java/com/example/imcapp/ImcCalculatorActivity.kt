@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var viewMale:CardView
     private lateinit var viewFemale:CardView
+    private var isMaleselected = true
     private fun getBackgroundColor(isComponentSelected: Boolean): Int
     {
         val colorReference= if(isComponentSelected)
@@ -24,9 +25,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
     private fun setGenderColor()
     {
-        viewMale.setCardBackgroundColor(getBackgroundColor(viewMale.isSelected))
-        viewFemale.setCardBackgroundColor(getBackgroundColor(!viewMale.isSelected)
-
+        viewMale.setCardBackgroundColor(getBackgroundColor(isMaleselected))
+        viewFemale.setCardBackgroundColor(getBackgroundColor(!isMaleselected))
     }
     private fun initComponents()
     {
@@ -37,15 +37,22 @@ class ImcCalculatorActivity : AppCompatActivity() {
     {
         viewMale.setOnClickListener()
         {
-
+            isMaleselected=true
+            setGenderColor()
         }
         viewFemale.setOnClickListener()
         {
-
+            isMaleselected=false
+            setGenderColor()
         }
+    }
+    private fun initUI()
+    {
+        setGenderColor()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         initComponents()
+        initListeners()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_imc_calculator)
