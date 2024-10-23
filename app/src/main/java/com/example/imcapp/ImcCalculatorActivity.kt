@@ -18,7 +18,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
         {
             R.color.bg_comp_sel
         }
-        else{
+        else
+        {
             R.color.bg_comp
         }
         return ContextCompat.getColor(this, colorReference)
