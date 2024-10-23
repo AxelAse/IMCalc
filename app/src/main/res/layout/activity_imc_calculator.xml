@@ -13,35 +13,37 @@
         android:layout_height="150dp"
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/viewFemale"
+        android:layout_marginRight="16dp"
         android:id="@+id/viewMale">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="4dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             >
 
             <ImageView
                 android:id="@+id/male_image"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_male"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/hombre"
-                style="@style/TextAppearance.MaterialComponents.Headline3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Hombre"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/male_image" />
+                android:layout_marginTop="10dp"
+                android:text="@string/male"
+                android:textColor="@color/title_text"
+                />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -50,15 +52,17 @@
         android:layout_height="150dp"
         app:cardBackgroundColor="@color/bg_comp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewMale"
         android:id="@+id/viewFemale">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="4dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
             <ImageView
                 android:id="@+id/female_image"
@@ -69,12 +73,11 @@
                 />
             <TextView
                 android:id="@+id/mujer"
-                style="@style/TextAppearance.MaterialComponents.Headline3"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Mujer"
-                app:layout_constraintTop_toBottomOf="@id/female_image" />
+                android:layout_marginTop="10dp"
+                android:text="@string/female"
+                android:textColor="@color/title_text"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
