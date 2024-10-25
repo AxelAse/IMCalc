@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 
 class ImcCalculatorActivity : AppCompatActivity() {
@@ -16,6 +17,12 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var viewFemale:CardView
     private lateinit var tvHeight:TextView
     private lateinit var rsHeight:RangeSlider
+    private lateinit var edad:TextView
+    private lateinit var btnSubtractAge:FloatingActionButton
+    private lateinit var btnAddAge:FloatingActionButton
+    private lateinit var peso:TextView
+    private lateinit var btnSubtractWeight:FloatingActionButton
+    private lateinit var btnAddWeight:FloatingActionButton
     private var isMaleselected = true
     private fun getBackgroundColor(isComponentSelected: Boolean): Int
     {
