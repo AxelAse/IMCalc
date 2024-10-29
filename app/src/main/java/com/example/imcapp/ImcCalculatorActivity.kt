@@ -11,12 +11,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import com.google.android.material.slider.Slider
 
 class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var viewMale:CardView
     private lateinit var viewFemale:CardView
     private lateinit var tvHeight:TextView
-    private lateinit var rsHeight:RangeSlider
+    private lateinit var rsHeight:Slider
     private lateinit var numeroEdad:TextView
     private lateinit var btnSubtractAge:FloatingActionButton
     private lateinit var btnAddAge:FloatingActionButton
@@ -55,8 +56,15 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
     private fun initComponents()
     {
+        rsHeight = findViewById(R.id.rsHeight)
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
+        numeroEdad = findViewById(R.id.numeroEdad)
+        numeroPeso = findViewById(R.id.numeroPeso)
+        btnAddAge = findViewById(R.id.btnAddAge)
+        btnAddWeight = findViewById(R.id.btnAddWeight)
+        btnSubtractAge = findViewById(R.id.btnSubtractAge)
+        btnSubtractWeight = findViewById(R.id.btnSubtractWeight)
     }
     private fun initListeners()
     {
