@@ -17,13 +17,15 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var viewFemale:CardView
     private lateinit var tvHeight:TextView
     private lateinit var rsHeight:RangeSlider
-    private lateinit var edad:TextView
+    private lateinit var numeroEdad:TextView
     private lateinit var btnSubtractAge:FloatingActionButton
     private lateinit var btnAddAge:FloatingActionButton
-    private lateinit var peso:TextView
+    private lateinit var numeroPeso:TextView
     private lateinit var btnSubtractWeight:FloatingActionButton
     private lateinit var btnAddWeight:FloatingActionButton
     private var isMaleselected = true
+    private var edadIni=0
+    private var pesoIni=0
     private fun getBackgroundColor(isComponentSelected: Boolean): Int
     {
         val colorReference= if(isComponentSelected)
@@ -40,6 +42,16 @@ class ImcCalculatorActivity : AppCompatActivity() {
     {
         viewMale.setCardBackgroundColor(getBackgroundColor(isMaleselected))
         viewFemale.setCardBackgroundColor(getBackgroundColor(!isMaleselected))
+    }
+    private fun setAge(nueva: Int)
+    {
+        edadIni=edadIni+nueva
+        numeroEdad.text = edadIni.toString()
+    }
+    private fun setWeight(nueva: Int)
+    {
+        pesoIni=pesoIni+nueva
+        numeroPeso.text=pesoIni.toString()
     }
     private fun initComponents()
     {
@@ -59,10 +71,28 @@ class ImcCalculatorActivity : AppCompatActivity() {
             setGenderColor()
         }
         rsHeight.addOnChangeListener{_, value,_ -> tvHeight.text=DecimalFormat("#.##").format(value) + " cm"}
+        btnAddAge.setOnClickListener()
+        {
+            setAge(1)
+        }
+        btnSubtractAge.setOnClickListener()
+        {
+            setAge(-1)
+        }
+        btnAddWeight.setOnClickListener()
+        {
+            setWeight(1)
+        }
+        btnSubtractWeight.setOnClickListener()
+        {
+            setWeight(-1)
+        }
     }
     private fun initUI()
     {
         setGenderColor()
+        setAge(0)
+        setWeight(0)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
