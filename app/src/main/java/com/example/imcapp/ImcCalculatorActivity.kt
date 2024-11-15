@@ -57,6 +57,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun initComponents()
     {
         rsHeight = findViewById(R.id.rsHeight)
+        tvHeight = findViewById(R.id.tvHeight)
         viewMale = findViewById(R.id.viewMale)
         viewFemale = findViewById(R.id.viewFemale)
         numeroEdad = findViewById(R.id.numeroEdad)
