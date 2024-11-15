@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -24,6 +25,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var numeroPeso:TextView
     private lateinit var btnSubtractWeight:FloatingActionButton
     private lateinit var btnAddWeight:FloatingActionButton
+    private lateinit var botonCalculo:AppCompatButton
     private var isMaleselected = true
     private var edadIni=0
     private var pesoIni=0
@@ -56,6 +58,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
     private fun initComponents()
     {
+        botonCalculo = findViewById(R.id.botonCalculo)
         rsHeight = findViewById(R.id.rsHeight)
         tvHeight = findViewById(R.id.tvHeight)
         viewMale = findViewById(R.id.viewMale)
@@ -96,6 +99,15 @@ class ImcCalculatorActivity : AppCompatActivity() {
         {
             setWeight(-1)
         }
+        botonCalculo.setOnClickListener()
+        {
+
+        }
+    }
+    private fun calculo() : Double
+    {
+        var Altura : Double = tvHeight.text.toString().replace("cm", "").toDouble()/100
+        return (pesoIni/(Altura*Altura))
     }
     private fun initUI()
     {

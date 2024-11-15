@@ -126,6 +126,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardedad"
         android:layout_width="0dp"
         android:layout_height="150dp"
         app:cardBackgroundColor="@color/bg_comp"
@@ -246,4 +247,17 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="@string/calcular"
+        android:backgroundTint="@color/bg_comp"
+        android:textColor="@color/white"
+        android:id="@+id/botonCalculo"
+        app:layout_constraintTop_toBottomOf="@id/cardedad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </androidx.appcompat.widget.AppCompatButton>
+"
 </androidx.constraintlayout.widget.ConstraintLayout>
